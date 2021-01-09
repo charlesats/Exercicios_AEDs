@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1610205695 source:/home/charles/Documents/GitHub/Exercicios_AEDs/Lista_Arranjo/main.c
+	<stdio.h>
+	<stdlib.h>
+	"listaArranjo.h"
+
+1610220941 /home/charles/Documents/GitHub/Exercicios_AEDs/Lista_Arranjo/listaArranjo.h
+	<stdio.h>
+	<stdlib.h>
+
+1610205757 source:/home/charles/Documents/GitHub/Exercicios_AEDs/Lista_Arranjo/listaArranjo.c
+	"listaArranjo.h"
+
