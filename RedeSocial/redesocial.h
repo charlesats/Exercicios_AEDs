@@ -31,4 +31,7 @@ typedef struct redeSocial
 void Ler(TUsuarios *user);
 void Imprimir(TUsuarios user);
 
+void Iniciar(TRedeSocial *rede);
+void Cadastrar(TRedeSocial *rede, TUsuarios user);
+void Imprimir2(TRedeSocial rede);
 #endif // REDESOCIAL_H_INCLUDED

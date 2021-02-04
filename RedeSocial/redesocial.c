@@ -3,6 +3,51 @@
 
 #include "redesocial.h"
 
+void Cadastrar(TRedeSocial *rede, TUsuarios user)
+{
+   if(rede->indice == 100)
+   {
+       printf("\nLista Cheia!");
+   }
+   else
+   {
+       rede->vetor[rede->indice] = user;
+       rede->vetor[rede->indice].ID = rede->indice;
+       rede->indice++;
+       printf("\nUsuario Cadastrado!");
+   }
+}
+
+void Imprimir2(TRedeSocial rede)
+{
+    if(rede.indice == 0)
+        printf("\nLista Vazia!");
+    else
+    {
+        int i;
+        for(i=0; i<rede.indice;i++)
+        {
+            Imprimir(rede.vetor[i]);
+        }
+
+        printf("\nTodos os usuarios cadastrados foram impressos!");
+    }
+}
+
+void Iniciar(TRedeSocial *rede)
+{
+    int linha, coluna;
+    for(linha = 0; linha < 100; linha++)
+    {
+        for(coluna = 0; coluna < 100; coluna++)
+        {
+            rede->matrix[linha][coluna] = 0;
+        }
+    }
+
+    rede->indice=0;
+}
+
 void Ler(TUsuarios *user)
 {
     printf("\nDigite o nome do usuario:");
@@ -37,6 +82,8 @@ void Ler(TUsuarios *user)
 
 void Imprimir(TUsuarios user)
 {
+    printf("\nID: %d", user.ID);
+
     printf("\nNome do usuario:");
     printf("\n%s",user.nome);
 
@@ -47,7 +94,7 @@ void Imprimir(TUsuarios user)
     printf("\n%s",user.login);
 
     printf("\nSenha do usuario:");
-    printf("\n%s",user.nome);
+    printf("\n%s",user.senha);
 
     printf("\nData de nascimento:\n");
     printf("\n\tDia:");
@@ -59,3 +106,4 @@ void Imprimir(TUsuarios user)
     printf("\n\tAno:");
     printf("%d", user.data_nascimento.ano);
 }
+

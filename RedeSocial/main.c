@@ -9,9 +9,16 @@ int main()
     //Declaração de variáveis locais
     TUsuarios user;
     TRedeSocial rede;
+    int i,j;
+
+    //Imprimir(user);
+    Iniciar(&rede);
 
     Ler(&user);
-    Imprimir(user);
+    Cadastrar(&rede, user);
+
+    Imprimir2(rede);
+
 
     return 0;
 }

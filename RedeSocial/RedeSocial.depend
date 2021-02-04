@@ -1,13 +1,13 @@
 # depslib dependency file v1.0
-1612290195 source:d:\repos\exercicios_aeds\redesocial\main.c
+1612455329 source:d:\repos\exercicios_aeds\redesocial\main.c
 	<stdio.h>
 	<stdlib.h>
 	"redesocial.h"
 
-1612288281 d:\repos\exercicios_aeds\redesocial\redesocial.h
+1612451305 d:\repos\exercicios_aeds\redesocial\redesocial.h
 	<stdio.h>
 
-1612290145 source:d:\repos\exercicios_aeds\redesocial\redesocial.c
+1612453628 source:d:\repos\exercicios_aeds\redesocial\redesocial.c
 	<stdio.h>
 	<stdlib.h>
 	"redesocial.h"
