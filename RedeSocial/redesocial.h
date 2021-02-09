@@ -2,6 +2,7 @@
 #define REDESOCIAL_H_INCLUDED
 
 #include <stdio.h>
+#include <string.h>
 
 typedef struct data
 {
@@ -28,10 +29,19 @@ typedef struct redeSocial
 }TRedeSocial;
 
 // Assinaturas das funções
-void Ler(TUsuarios *user);
-void Imprimir(TUsuarios user);
 
-void Iniciar(TRedeSocial *rede);
+//Funções Auxiliares
+void Imprimir(TUsuarios user);
+void Ler(TUsuarios *user);
+
+//Funções Básicas
+int Pesquisar(TRedeSocial rede, TUsuarios user);
+void Alterar(TRedeSocial *rede, TUsuarios user, int indice);
 void Cadastrar(TRedeSocial *rede, TUsuarios user);
 void Imprimir2(TRedeSocial rede);
+void Iniciar(TRedeSocial *rede);
+
+
+
+
 #endif // REDESOCIAL_H_INCLUDED
