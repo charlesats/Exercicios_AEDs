@@ -1,15 +1,28 @@
 # depslib dependency file v1.0
-1612846612 source:d:\repos\exercicios_aeds\redesocial\main.c
+1613498758 source:d:\repos\exercicios_aeds\redesocial\main.c
 	<stdio.h>
 	<stdlib.h>
+	"interface.h"
+
+1613490979 d:\repos\exercicios_aeds\redesocial\redesocial.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<locale.h>
+
+1613498600 source:d:\repos\exercicios_aeds\redesocial\redesocial.c
 	"redesocial.h"
 
-1612845599 d:\repos\exercicios_aeds\redesocial\redesocial.h
-	<stdio.h>
-	<string.h>
+1613498758 source:d:\repos\exercicios_aeds\redesocial\interface.c
+	"interface.h"
 
-1612845599 source:d:\repos\exercicios_aeds\redesocial\redesocial.c
-	<stdio.h>
-	<stdlib.h>
+1613494263 d:\repos\exercicios_aeds\redesocial\interface.h
+	"redesocial.h"
+	"amizade.h"
+
+1613491916 source:d:\repos\exercicios_aeds\redesocial\amizade.c
+	"amizade.h"
+
+1613433475 d:\repos\exercicios_aeds\redesocial\amizade.h
 	"redesocial.h"
 

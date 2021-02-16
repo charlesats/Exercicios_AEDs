@@ -1,38 +1,63 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "redesocial.h"
-
+//#include "redesocial.h"
+#include "interface.h"
 
 int main()
 {
+    //Adaptação do programa ao idioma do sistema
+    setlocale(LC_ALL,"");
+
     //Declaração de variáveis locais
     TUsuarios user;
     TRedeSocial rede;
-    int x;
-
-    //Imprimir(user);
     Iniciar(&rede);
 
-    Ler(&user);
-    Cadastrar(&rede, user);
-    Ler(&user);
-    Cadastrar(&rede, user);
-
-    Imprimir2(rede);
-
-    printf("\nDigite um nome para pesquisar!");
-    fflush(stdin);
-    fgets(user.nome, 100, stdin);
-    x = Pesquisar(rede, user);
+    int opcao = 0;
 
 
-    Ler(&user);
+    MSG_REDE();
+    system("PAUSE");
+    do
+    {
+        system("cls");
+        MSG_MENU();
+        printf("\n\n\t>>>>>>>>>>>>>    Digite uma opção:    <<<<<<<<<<<<\n\t>");
+        fflush(stdin);
+        scanf("%d", &opcao);
+        switch(opcao)
+        {
+        case 1:
+        {
+            SubMenuModulo1(&rede, user);
 
+        }
+        break;
+        case 2:
+        {
+            SubMenuModulo2(&rede, user);
 
-    Alterar(&rede, user, x);
+        }
+        break;
+        case 3:
+        {
+            system("cls");
+            printf("\n\n\n\t>>>>>>    MSG: Saindo do programa...!!!    <<<<<<\n\n\n");
+        }
+        break;
+        default:
+        {
+            system("cls");
+            printf("\n\n\n\t>>>>>    MSG: Digite uma opção válida!!!    <<<<<\n\n\n");
+            system("PAUSE");
 
-    Imprimir2(rede);
+        }
+        }
+    }
+    while(opcao != 3);
+
+    system("PAUSE");
 
 
 
