@@ -2,14 +2,14 @@
 
 void MSG_REDE()
 {
-    printf("\n\n\t  AAA	AAAAAAA	AAAAA    AAAAA	");
-    printf("\n\t AAAAA	AAAAAAA	AAAAAA  AAAAAAA");
-    printf("\n\tAA   AA	AA	AA   AA AA");
-    printf("\n\tAAAAAAA	AAAAAAA	AA   AA AAAAAA");
-    printf("\n\tAAAAAAA	AAAAAAA	AA   AA  AAAAAA");
-    printf("\n\tAA   AA	AA	AA   AA      AA");
-    printf("\n\tAA   AA	AAAAAAA	AAAAAA   AAAAAA");
-    printf("\n\tAA   AA	AAAAAAA	AAAAA   AAAAAA");
+    printf("\n\n\t  AAA	EEEEEEE	DDDDD    SSSSS	");
+    printf("\n\t AAAAA	EEEEEEE	DDDDDD  SSSSSSS");
+    printf("\n\tAA   AA	EE	DD   DD SS");
+    printf("\n\tAAAAAAA	EEEEEEE	DD   DD SSSSSS");
+    printf("\n\tAAAAAAA	EEEEEEE	DD   DD  SSSSSS");
+    printf("\n\tAA   AA	EE	DD   DD      SS");
+    printf("\n\tAA   AA	EEEEEEE	DDDDDD   SSSSSS");
+    printf("\n\tAA   AA	EEEEEEE	DDDDD   SSSSSS");
     printf("\n\t                   REDE SOCIAL\n\n");
 }
 void MSG_MENU()
