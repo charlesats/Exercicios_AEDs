@@ -12,14 +12,18 @@ int PesquisarAmizades(TRedeSocial rede, TUsuarios userA, TUsuarios userB)
 void CadastrarAmizades(TRedeSocial *rede, TUsuarios userA, TUsuarios userB)
 {
     rede->matrix[userA.ID][userB.ID] = 1;
+    rede->vetor[userA.ID].total_amigos++;
     rede->matrix[userB.ID][userA.ID] = 1;
+    rede->vetor[userB.ID].total_amigos++;
     printf("\n\n >>>>>> MSG: As amizades foram cadastradas! <<<<<<\n\n");
 }
 
 void ExcluirAmizades(TRedeSocial *rede, TUsuarios userA, TUsuarios userB)
 {
     rede->matrix[userA.ID][userB.ID] = 0;
+    rede->vetor[userA.ID].total_amigos --;
     rede->matrix[userB.ID][userA.ID] = 0;
+    rede->vetor[userB.ID].total_amigos --;
     printf("\n\n >>>>>> MSG: As amizades foram desfeitas! <<<<<<\n\n");
 }
 

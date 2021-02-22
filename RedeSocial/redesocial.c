@@ -53,7 +53,7 @@ void Ler(TUsuarios *user)
     fflush(stdin);
     scanf("%d", &user->data_nascimento.mes);
 
-    printf("\n\t\\t> Digite o ano:");
+    printf("\n\t\t> Digite o ano:");
     fflush(stdin);
     scanf("%d", &user->data_nascimento.ano);
 }
@@ -91,6 +91,7 @@ void Cadastrar(TRedeSocial *rede, TUsuarios user)
         rede->vetor[rede->indice] = user;
         rede->vetor[rede->indice].ID = rede->indice;
         rede->indice++;
+        rede->vetor[rede->indice].total_amigos = 0;
     }
 }
 

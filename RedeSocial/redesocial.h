@@ -22,6 +22,7 @@ typedef struct usuarios
     char senha[50];
     TData data_nascimento;
     int ID;
+    int total_amigos;
 } TUsuarios;
 
 typedef struct redeSocial

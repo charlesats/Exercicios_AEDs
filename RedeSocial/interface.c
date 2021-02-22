@@ -17,7 +17,8 @@ void MSG_MENU()
     printf("\n\n\t>>>>>>>>>>>>>>>>>>>    MENU:   <<<<<<<<<<<<<<<<<<<");
     printf("\n\t> 1. MÓDULO 1 - GERENCIAMENTO DE USUÁRIOS        <");
     printf("\n\t> 2. MÓDULO 2 - GERENCIAMENTO DE AMIZADES        <");
-    printf("\n\t> 3. SAIR                                        <");
+    printf("\n\t> 3. MÓDULO 3 - EXERCÍCIOS                       <");
+    printf("\n\t> 4. SAIR                                        <");
     printf("\n\t>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<");
 }
 
@@ -43,6 +44,21 @@ void MSG_SUBMENU2(int numero_modulo)
     printf("\n\t> 3. EXCLUIR AMIZADES                            <");
     printf("\n\t> 4. IMPRIMIR A LISTA DE AMIGOS                  <");
     printf("\n\t> 5. SAIR                                        <");
+    printf("\n\t>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<");
+
+}
+
+void MSG_SUBMENU3(int numero_modulo)
+{
+    system("cls");
+    printf("\n\n\t>>>>>>>>>>>>>>>>>    MÓDULO %d    <<<<<<<<<<<<<<<<<", numero_modulo);
+    printf("\n\t> 1. USUÁRIO COM MAIS AMIZADES                   <");
+    printf("\n\t> 2. AMIZADES EM COMUM                           <");
+    printf("\n\t> 3. MATRIZ DE AMIGOS EM COMUM                   <");
+    printf("\n\t> 4. NENHUM AMIGO EM COMUM                       <");
+    printf("\n\t> 5. AMIZADE INDIRETA DE UM NÍVEL                <");
+    printf("\n\t> 6. AMIZADE INDIRETA DE DOIS NÍVEIS             <");
+    printf("\n\t> 7. SAIR                                        <");
     printf("\n\t>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<");
 
 }
@@ -177,7 +193,6 @@ void SubMenuModulo2(TRedeSocial *rede, TUsuarios user)
         case 1:
         {
             system("cls");
-            system("cls");
             printf("\n\n >>>>>> MSG: Digite o nome do primeiro usuários: <<<<<<\n\n");
             fflush(stdin);
             fgets(user.nome, 100, stdin);
@@ -206,6 +221,126 @@ void SubMenuModulo2(TRedeSocial *rede, TUsuarios user)
                 printf("\n\n >>>>>> MSG: O primeiro usuário não está na rede!               <<<<<<\n\n");
                 printf("\n\n >>>>>> MSG: Não foi possível realizar o cadastro das Amizades! <<<<<<\n\n");
             }
+            system("PAUSE");
+        }
+        break;
+        case 2:
+        {
+            system("cls");
+            printf("\n\n >>>>>> MSG: Digite o nome do primeiro usuários: <<<<<<\n\n");
+            fflush(stdin);
+            fgets(user.nome, 100, stdin);
+            i = Pesquisar(*rede, user);
+
+            if(i>=0)
+            {
+                system("cls");
+                printf("\n\n >>>>>> MSG: Digite o nome do segundo usuários:  <<<<<<\n\n");
+                fflush(stdin);
+                fgets(user.nome, 100, stdin);
+                j = Pesquisar(*rede, user);
+
+                if(j>=0)
+                {
+                    k = PesquisarAmizades(*rede, rede->vetor[i], rede->vetor[j]);
+                }
+                else
+                {
+                    printf("\n\n >>>>>> MSG: O segundo usuário não está na rede!                <<<<<<\n\n");
+                    printf("\n\n >>>>>> MSG: Não foi possível realizar a pesquisa das Amizades! <<<<<<\n\n");
+                }
+            }
+            else
+            {
+                printf("\n\n >>>>>> MSG: O primeiro usuário não está na rede!               <<<<<<\n\n");
+                printf("\n\n >>>>>> MSG: Não foi possível realizar a pesquisa das Amizades! <<<<<<\n\n");
+            }
+
+            if(k == 1)
+                printf("\n\n >>>>>> MSG: Os usuários são amigos! <<<<<<\n\n");
+            else if(k == 0)
+                printf("\n\n >>>>>> MSG: Os usuários não são amigos! <<<<<<\n\n");
+            system("PAUSE");
+        }
+        break;
+        case 3:
+        {
+            system("cls");
+            printf("\n\n >>>>>> MSG: Digite o nome do primeiro usuários: <<<<<<\n\n");
+            fflush(stdin);
+            fgets(user.nome, 100, stdin);
+            i = Pesquisar(*rede, user);
+
+            if(i>=0)
+            {
+                system("cls");
+                printf("\n\n >>>>>> MSG: Digite o nome do segundo usuários:  <<<<<<\n\n");
+                fflush(stdin);
+                fgets(user.nome, 100, stdin);
+                j = Pesquisar(*rede, user);
+
+                if(j>=0)
+                {
+                    ExcluirAmizades(rede, rede->vetor[i], rede->vetor[j]);
+                }
+                else
+                {
+                    printf("\n\n >>>>>> MSG: O segundo usuário não está na rede!    <<<<<<\n\n");
+                    printf("\n\n >>>>>> MSG: Não foi possível desfazer as Amizades! <<<<<<\n\n");
+                }
+            }
+            else
+            {
+                printf("\n\n >>>>>> MSG: O primeiro usuário não está na rede!   <<<<<<\n\n");
+                printf("\n\n >>>>>> MSG: Não foi possível desfazer as Amizades! <<<<<<\n\n");
+            }
+            system("PAUSE");
+        }
+        break;
+        case 4:
+        {
+            system("cls");
+            printf("\n\n >>>>>> MSG: Digite o nome do usuários: <<<<<<\n\n");
+            fflush(stdin);
+            fgets(user.nome, 100, stdin);
+            ImprimirListaAmigos(*rede, user);
+            system("PAUSE");
+        }
+        break;
+        case 5:
+        {
+            system("cls");
+            printf("\n\n\n\t>>>>>> MSG: Saindo do MÓDULO...!!! <<<<<<\n\n\n");
+            system("PAUSE");
+        }
+        break;
+        default:
+            system("cls");
+            printf("\n\n\n\t>>>>>> MSG: Digite uma opção válida!!! <<<<<<\n\n\n");
+            system("PAUSE");
+        }
+    }
+    while(opcao != 5);
+}
+
+void SubMenuModulo3(TRedeSocial *rede, TUsuarios user)
+{
+    int i, j, k;
+    int opcao = 0;
+
+    do
+    {
+        MSG_SUBMENU3(3);
+        printf("\n\n\t>>>>>>>>>>>>>    Digite uma opção:    <<<<<<<<<<<<\n\t>");
+        fflush(stdin);
+        scanf("%d", &opcao);
+        switch(opcao)
+        {
+        case 1:
+        {
+            i = MaisAmigos(*rede);
+
+            printf("\n\n\t> O usuário com mais amigos é %s    ", rede->vetor[i].nome);
             system("PAUSE");
         }
         break;
@@ -293,7 +428,7 @@ void SubMenuModulo2(TRedeSocial *rede, TUsuarios user)
             system("PAUSE");
         }
         break;
-        case 5:
+        case 7:
         {
             system("cls");
             printf("\n\n\n\t>>>>>> MSG: Saindo do MÓDULO...!!! <<<<<<\n\n\n");
@@ -306,5 +441,5 @@ void SubMenuModulo2(TRedeSocial *rede, TUsuarios user)
             system("PAUSE");
         }
     }
-    while(opcao != 5);
+    while(opcao != 7);
 }

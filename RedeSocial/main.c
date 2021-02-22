@@ -42,6 +42,10 @@ int main()
         break;
         case 3:
         {
+            SubMenuModulo3(&rede, user);
+        }
+        case 4:
+        {
             system("cls");
             printf("\n\n\n\t>>>>>>    MSG: Saindo do programa...!!!    <<<<<<\n\n\n");
         }
@@ -55,7 +59,7 @@ int main()
         }
         }
     }
-    while(opcao != 3);
+    while(opcao != 4);
 
     system("PAUSE");
 
