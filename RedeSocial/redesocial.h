@@ -29,8 +29,11 @@ typedef struct redeSocial
 {
     TUsuarios vetor[100];
     int matrix[100][100];
+    int matriz_amizades_em_comum[100][100];
     int indice;
 } TRedeSocial;
+
+
 
 // Assinaturas das funções
 
@@ -45,8 +48,6 @@ void Cadastrar(TRedeSocial *rede, TUsuarios user);
 void Excluir(TRedeSocial *rede, int indice);
 void Imprimir2(TRedeSocial rede);
 void Iniciar(TRedeSocial *rede);
-
-
 
 
 #endif // REDESOCIAL_H_INCLUDED

@@ -130,6 +130,14 @@ void Iniciar(TRedeSocial *rede)
         }
     }
 
+    for(linha = 0; linha < 100; linha++)
+    {
+        for(coluna = 0; coluna < 100; coluna++)
+        {
+            rede->matriz_amizades_em_comum[linha][coluna] = 0;
+        }
+    }
+
     rede->indice=0;
 }
 

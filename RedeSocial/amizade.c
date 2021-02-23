@@ -3,10 +3,33 @@
 int PesquisarAmizades(TRedeSocial rede, TUsuarios userA, TUsuarios userB)
 {
 
-    if((rede.matrix[userA.ID][userB.ID] == 1) && (rede.matrix[userB.ID][userA.ID] == 1))
-        return 1;
+    int i, j;
+
+    i = Pesquisar(rede, userA);
+
+    if(i>=0)
+    {
+        system("cls");
+
+        j = Pesquisar(rede, userB);
+
+        if(j>=0)
+        {
+            if((rede.matrix[i][j] == 1) && (rede.matrix[j][i] == 1))
+                return 1;
+            return 0;
+        }
+        else
+        {
+            printf("\n\n >>>>>>    MSG: O segundo usuário não está na rede!    <<<<<<\n\n");
+            return -1;
+        }
+    }
     else
-        return 0;
+    {
+        printf("\n\n >>>>>>    MSG: O primeiro usuário não está na rede!    <<<<<<\n\n");
+        return -1;
+    }
 }
 
 void CadastrarAmizades(TRedeSocial *rede, TUsuarios userA, TUsuarios userB)

@@ -181,6 +181,7 @@ void SubMenuModulo2(TRedeSocial *rede, TUsuarios user)
 {
     int i, j, k;
     int opcao = 0;
+    TUsuarios user1;
 
     do
     {
@@ -230,37 +231,21 @@ void SubMenuModulo2(TRedeSocial *rede, TUsuarios user)
             printf("\n\n >>>>>> MSG: Digite o nome do primeiro usuários: <<<<<<\n\n");
             fflush(stdin);
             fgets(user.nome, 100, stdin);
-            i = Pesquisar(*rede, user);
+            system("cls");
+            printf("\n\n >>>>>> MSG: Digite o nome do segundo usuários:  <<<<<<\n\n");
+            fflush(stdin);
+            fgets(user1.nome, 100, stdin);
 
-            if(i>=0)
-            {
-                system("cls");
-                printf("\n\n >>>>>> MSG: Digite o nome do segundo usuários:  <<<<<<\n\n");
-                fflush(stdin);
-                fgets(user.nome, 100, stdin);
-                j = Pesquisar(*rede, user);
-
-                if(j>=0)
-                {
-                    k = PesquisarAmizades(*rede, rede->vetor[i], rede->vetor[j]);
-                }
-                else
-                {
-                    printf("\n\n >>>>>> MSG: O segundo usuário não está na rede!                <<<<<<\n\n");
-                    printf("\n\n >>>>>> MSG: Não foi possível realizar a pesquisa das Amizades! <<<<<<\n\n");
-                }
-            }
-            else
-            {
-                printf("\n\n >>>>>> MSG: O primeiro usuário não está na rede!               <<<<<<\n\n");
-                printf("\n\n >>>>>> MSG: Não foi possível realizar a pesquisa das Amizades! <<<<<<\n\n");
-            }
+            k = PesquisarAmizades(*rede, user, user1);
 
             if(k == 1)
                 printf("\n\n >>>>>> MSG: Os usuários são amigos! <<<<<<\n\n");
             else if(k == 0)
                 printf("\n\n >>>>>> MSG: Os usuários não são amigos! <<<<<<\n\n");
+            else
+                printf("\n\n >>>>>> MSG: Não foi possível realizar a pesquisa das Amizades! <<<<<<\n\n");
             system("PAUSE");
+
         }
         break;
         case 3:
@@ -325,8 +310,9 @@ void SubMenuModulo2(TRedeSocial *rede, TUsuarios user)
 
 void SubMenuModulo3(TRedeSocial *rede, TUsuarios user)
 {
-    int i, j, k;
+    int i, j, k, l;
     int opcao = 0;
+    TUsuarios user1;
 
     do
     {
@@ -338,8 +324,8 @@ void SubMenuModulo3(TRedeSocial *rede, TUsuarios user)
         {
         case 1:
         {
+            system("cls");
             i = MaisAmigos(*rede);
-
             printf("\n\n\t> O usuário com mais amigos é %s    ", rede->vetor[i].nome);
             system("PAUSE");
         }
@@ -350,81 +336,49 @@ void SubMenuModulo3(TRedeSocial *rede, TUsuarios user)
             printf("\n\n >>>>>> MSG: Digite o nome do primeiro usuários: <<<<<<\n\n");
             fflush(stdin);
             fgets(user.nome, 100, stdin);
-            i = Pesquisar(*rede, user);
 
-            if(i>=0)
+
+            system("cls");
+            printf("\n\n >>>>>> MSG: Digite o nome do segundo usuários:  <<<<<<\n\n");
+            fflush(stdin);
+            fgets(user1.nome, 100, stdin);
+
+            k = PesquisarAmizades(*rede, user, user1);
+
+            if(k == 0)
             {
+                i = Pesquisar(*rede, user);
+                j = Pesquisar(*rede, user1);
+
+                l = AmigosEmComum(*rede, i, j);
                 system("cls");
-                printf("\n\n >>>>>> MSG: Digite o nome do segundo usuários:  <<<<<<\n\n");
-                fflush(stdin);
-                fgets(user.nome, 100, stdin);
-                j = Pesquisar(*rede, user);
-
-                if(j>=0)
-                {
-                    k = PesquisarAmizades(*rede, rede->vetor[i], rede->vetor[j]);
-                }
-                else
-                {
-                    printf("\n\n >>>>>> MSG: O segundo usuário não está na rede!                <<<<<<\n\n");
-                    printf("\n\n >>>>>> MSG: Não foi possível realizar a pesquisa das Amizades! <<<<<<\n\n");
-                }
+                printf("\n\n\t > Os usuários %s e %s possuem %d amigos em comum!\n\n", user.nome, user1.nome, l);
+                system("PAUSE");
             }
-            else
-            {
-                printf("\n\n >>>>>> MSG: O primeiro usuário não está na rede!               <<<<<<\n\n");
-                printf("\n\n >>>>>> MSG: Não foi possível realizar a pesquisa das Amizades! <<<<<<\n\n");
-            }
-
-            if(k == 1)
-                printf("\n\n >>>>>> MSG: Os usuários são amigos! <<<<<<\n\n");
-            else if(k == 0)
-                printf("\n\n >>>>>> MSG: Os usuários não são amigos! <<<<<<\n\n");
-            system("PAUSE");
         }
         break;
         case 3:
         {
             system("cls");
-            system("cls");
-            printf("\n\n >>>>>> MSG: Digite o nome do primeiro usuários: <<<<<<\n\n");
-            fflush(stdin);
-            fgets(user.nome, 100, stdin);
-            i = Pesquisar(*rede, user);
-
-            if(i>=0)
-            {
-                system("cls");
-                printf("\n\n >>>>>> MSG: Digite o nome do segundo usuários:  <<<<<<\n\n");
-                fflush(stdin);
-                fgets(user.nome, 100, stdin);
-                j = Pesquisar(*rede, user);
-
-                if(j>=0)
-                {
-                    ExcluirAmizades(rede, rede->vetor[i], rede->vetor[j]);
-                }
-                else
-                {
-                    printf("\n\n >>>>>> MSG: O segundo usuário não está na rede!    <<<<<<\n\n");
-                    printf("\n\n >>>>>> MSG: Não foi possível desfazer as Amizades! <<<<<<\n\n");
-                }
-            }
-            else
-            {
-                printf("\n\n >>>>>> MSG: O primeiro usuário não está na rede!   <<<<<<\n\n");
-                printf("\n\n >>>>>> MSG: Não foi possível desfazer as Amizades! <<<<<<\n\n");
-            }
+            MatrizAmigosEmComum(rede);
             system("PAUSE");
         }
         break;
         case 4:
         {
             system("cls");
-            printf("\n\n >>>>>> MSG: Digite o nome do usuários: <<<<<<\n\n");
+            printf("\n\n >>>>>> MSG: Digite o nome do primeiro usuários: <<<<<<\n\n");
             fflush(stdin);
             fgets(user.nome, 100, stdin);
-            ImprimirListaAmigos(*rede, user);
+
+
+            system("cls");
+            printf("\n\n >>>>>> MSG: Digite o nome do segundo usuários:  <<<<<<\n\n");
+            fflush(stdin);
+            fgets(user1.nome, 100, stdin);
+
+            SemAmigosEmComum(*rede, user, user1);
+
             system("PAUSE");
         }
         break;
