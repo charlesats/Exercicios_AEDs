@@ -10,7 +10,6 @@ int PesquisarAmizades(TRedeSocial rede, TUsuarios userA, TUsuarios userB)
     if(i>=0)
     {
         system("cls");
-
         j = Pesquisar(rede, userB);
 
         if(j>=0)
@@ -22,12 +21,14 @@ int PesquisarAmizades(TRedeSocial rede, TUsuarios userA, TUsuarios userB)
         else
         {
             printf("\n\n >>>>>>    MSG: O segundo usuário não está na rede!    <<<<<<\n\n");
+            system("PAUSE");
             return -1;
         }
     }
     else
     {
         printf("\n\n >>>>>>    MSG: O primeiro usuário não está na rede!    <<<<<<\n\n");
+        system("PAUSE");
         return -1;
     }
 }

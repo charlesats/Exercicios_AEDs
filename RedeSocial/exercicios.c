@@ -31,6 +31,11 @@ int AmigosEmComum(TRedeSocial rede, int id1, int id2)
     return qtd;
 }
 
+int AmizadeIndireta1(TRedeSocial rede, TUsuarios userA, TUsuarios userB)
+{
+    return 0;
+}
+
 void MatrizAmigosEmComum(TRedeSocial *rede)
 {
     int linha, coluna;
@@ -45,18 +50,15 @@ void MatrizAmigosEmComum(TRedeSocial *rede)
         }
     }
 
-
-
-
     //Teste, imprime a matriz de amizades em comum
-    /*for(linha = 0; linha < rede->indice; linha++)
+    for(linha = 0; linha < rede->indice; linha++)
     {
         printf("\n");
         for(coluna = 0; coluna < rede->indice; coluna++)
         {
             printf("%d ", rede->matriz_amizades_em_comum[linha][coluna]);
         }
-    }*/
+    }
     printf("\n\n");
 }
 
@@ -65,18 +67,35 @@ void SemAmigosEmComum(TRedeSocial rede, TUsuarios userA, TUsuarios userB)
     int i, j, k;
 
     i = Pesquisar(rede, userA);
-    j = Pesquisar(rede, userB);
 
-    k = PesquisarAmizades(rede, userA, userB);
-
-    MatrizAmigosEmComum(&rede);
-
-
-
-    if((k == 0) && (rede.matriz_amizades_em_comum[i][j] == 0))
+    if(i>=0)
     {
-        printf("\n\n\t> Os usuários %s e %s não possuem amigos em comum!\n\n", userA.nome, userB.nome);
+        j = Pesquisar(rede, userB);
+
+        if(j>=0)
+        {
+            k = PesquisarAmizades(rede, userA, userB);
+
+            MatrizAmigosEmComum(&rede);
+
+
+
+            if((k == 0) && (rede.matriz_amizades_em_comum[i][j] == 0))
+            {
+                printf("\n\n\t>>>>>>    MSG: Os usuários não possuem amigos em comum!    <<<<<<\n\n");
+            }
+            else
+                printf("\n\n\t>>>>>>    MSG: Os usuários possuem %d amigos em comum!    <<<<<<\n\n", rede.matriz_amizades_em_comum[i][j]);
+        }
+
+
     }
     else
-        printf("\n\n\t> Os usuários %s e %s possuem %d amigos em comum!\n\n", userA.nome, userB.nome, rede.matriz_amizades_em_comum[i][j]);
+        printf("\n\n\t>>>>>>    MSG: Os usuários não foram encontrados na rede!!!    <<<<<<\n\n");
+
+}
+
+void AmizadeIndireta2(TRedeSocial rede, TUsuarios userA, TUsuarios userB, int *id1, int *id2)
+{
+
 }

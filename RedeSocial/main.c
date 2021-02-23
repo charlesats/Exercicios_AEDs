@@ -1,8 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-//#include "redesocial.h"
+#include "redesocial.h"
 #include "interface.h"
+#include "amizade.h"
+#include "exercicios.h"
 
 int main()
 {

@@ -326,20 +326,19 @@ void SubMenuModulo3(TRedeSocial *rede, TUsuarios user)
         {
             system("cls");
             i = MaisAmigos(*rede);
-            printf("\n\n\t> O usuário com mais amigos é %s    ", rede->vetor[i].nome);
+            printf("\n\n\t>>>>>>    MSG: O usuário com mais amigos é %s    <<<<<<\n\n", rede->vetor[i].nome);
             system("PAUSE");
         }
         break;
         case 2:
         {
             system("cls");
-            printf("\n\n >>>>>> MSG: Digite o nome do primeiro usuários: <<<<<<\n\n");
+            printf("\n\n\t>>>>>>    MSG: Digite o nome do primeiro usuários:    <<<<<<\n\n");
             fflush(stdin);
             fgets(user.nome, 100, stdin);
 
-
             system("cls");
-            printf("\n\n >>>>>> MSG: Digite o nome do segundo usuários:  <<<<<<\n\n");
+            printf("\n\n\t>>>>>>     MSG: Digite o nome do segundo usuários:    <<<<<<\n\n");
             fflush(stdin);
             fgets(user1.nome, 100, stdin);
 
@@ -352,7 +351,13 @@ void SubMenuModulo3(TRedeSocial *rede, TUsuarios user)
 
                 l = AmigosEmComum(*rede, i, j);
                 system("cls");
-                printf("\n\n\t > Os usuários %s e %s possuem %d amigos em comum!\n\n", user.nome, user1.nome, l);
+                printf("\n\n\t>>>>>>     MSG: Os usuários possuem %d amigos em comum!    <<<<<<\n\n", l);
+                system("PAUSE");
+            }
+            else
+            {
+                system("cls");
+                printf("\n\n\t>>>>>>    MSG: Os usuários são amigos!    <<<<<<\n\n");
                 system("PAUSE");
             }
         }
@@ -367,18 +372,34 @@ void SubMenuModulo3(TRedeSocial *rede, TUsuarios user)
         case 4:
         {
             system("cls");
-            printf("\n\n >>>>>> MSG: Digite o nome do primeiro usuários: <<<<<<\n\n");
+            printf("\n\n\t>>>>>>    MSG: Digite o nome do primeiro usuários:    <<<<<<\n\n\t>");
             fflush(stdin);
             fgets(user.nome, 100, stdin);
 
 
             system("cls");
-            printf("\n\n >>>>>> MSG: Digite o nome do segundo usuários:  <<<<<<\n\n");
+            printf("\n\n\t>>>>>>    MSG: Digite o nome do segundo usuários:    <<<<<<\n\n\t>");
             fflush(stdin);
             fgets(user1.nome, 100, stdin);
 
             SemAmigosEmComum(*rede, user, user1);
 
+            system("PAUSE");
+        }
+        break;
+        case 5:
+        {
+            system("cls");
+            printf("\n\n\t>>>>>>    MSG: Case 5!!!   <<<<<<\n\n\n");
+            i = AmizadeIndireta1(*rede, user, user1);
+            system("PAUSE");
+        }
+        break;
+        case 6:
+        {
+            system("cls");
+            printf("\n\n\t>>>>>>    MSG: Case 6!!!    <<<<<<\n\n\n");
+            AmizadeIndireta2(*rede, user, user1, &i, &j);
             system("PAUSE");
         }
         break;
@@ -391,7 +412,7 @@ void SubMenuModulo3(TRedeSocial *rede, TUsuarios user)
         break;
         default:
             system("cls");
-            printf("\n\n\n\t>>>>>> MSG: Digite uma opção válida!!! <<<<<<\n\n\n");
+            printf("\n\n\n\t>>>>>>    MSG: Digite uma opção válida!!!    <<<<<<\n\n\n");
             system("PAUSE");
         }
     }

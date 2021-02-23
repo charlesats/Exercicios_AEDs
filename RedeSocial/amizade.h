@@ -2,6 +2,7 @@
 #define AMIZADE_H
 
 #include "redesocial.h"
+#include "interface.h"
 
 int PesquisarAmizades(TRedeSocial rede, TUsuarios userA, TUsuarios userB);
 void CadastrarAmizades(TRedeSocial *rede, TUsuarios userA, TUsuarios userB);
