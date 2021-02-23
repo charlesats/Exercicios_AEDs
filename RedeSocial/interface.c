@@ -390,16 +390,87 @@ void SubMenuModulo3(TRedeSocial *rede, TUsuarios user)
         case 5:
         {
             system("cls");
-            printf("\n\n\t>>>>>>    MSG: Case 5!!!   <<<<<<\n\n\n");
-            i = AmizadeIndireta1(*rede, user, user1);
+            printf("\n\n\t>>>>>>    MSG: Digite o nome do primeiro usuários:    <<<<<<\n\n\t>");
+            fflush(stdin);
+            fgets(user.nome, 100, stdin);
+
+
+            system("cls");
+            printf("\n\n\t>>>>>>    MSG: Digite o nome do segundo usuários:    <<<<<<\n\n\t>");
+            fflush(stdin);
+            fgets(user1.nome, 100, stdin);
+
+            i = Pesquisar(*rede, user);
+            j = Pesquisar(*rede, user1);
+
+            if(i>=0)
+            {
+                if(j>=0)
+                {
+                    k = AmizadeIndireta1(*rede, user, user1);
+                    if(k>=0)
+                    {
+                        system("cls");
+                        printf("\n\n\t>>>>>>    MSG: O ID do usuário intermediário é: %d    <<<<<<\n\n", k);
+                    }
+                    else
+                    {
+                        system("cls");
+                        printf("\n\n\t>>>>>>    MSG: Os usuários não possuem amigos em comum!!    <<<<<<\n\n");
+                    }
+
+                }
+                else
+                {
+                    system("cls");
+                    printf("\n\n\t>>>>>>    MSG: O segundo usuário não foi encontrado na rede!    <<<<<<\n\n");
+                }
+
+            }
+            else
+            {
+                system("cls");
+                printf("\n\n\t>>>>>>    MSG: O primeiro usuário não foi encontrado na rede!    <<<<<<\n\n");
+            }
             system("PAUSE");
         }
         break;
         case 6:
         {
             system("cls");
-            printf("\n\n\t>>>>>>    MSG: Case 6!!!    <<<<<<\n\n\n");
-            AmizadeIndireta2(*rede, user, user1, &i, &j);
+            printf("\n\n\t>>>>>>    MSG: Digite o nome do primeiro usuários:    <<<<<<\n\n\t>");
+            fflush(stdin);
+            fgets(user.nome, 100, stdin);
+
+
+            system("cls");
+            printf("\n\n\t>>>>>>    MSG: Digite o nome do segundo usuários:    <<<<<<\n\n\t>");
+            fflush(stdin);
+            fgets(user1.nome, 100, stdin);
+
+            i = Pesquisar(*rede, user);
+            j = Pesquisar(*rede, user1);
+
+            if(i>=0)
+            {
+                if(j>=0)
+                {
+                    AmizadeIndireta2(*rede, user, user1, &i, &j);
+                    printf("\n\n\t>>>>>>    MSG: Os ID's dos usuários intermediários são: %d e %d   <<<<<<\n\n", i, j);
+
+                }
+                else
+                {
+                    system("cls");
+                    printf("\n\n\t>>>>>>    MSG: O segundo usuário não foi encontrado na rede!    <<<<<<\n\n");
+                }
+
+            }
+            else
+            {
+                system("cls");
+                printf("\n\n\t>>>>>>    MSG: O primeiro usuário não foi encontrado na rede!    <<<<<<\n\n");
+            }
             system("PAUSE");
         }
         break;
