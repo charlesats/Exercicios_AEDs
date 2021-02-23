@@ -100,7 +100,11 @@ void SemAmigosEmComum(TRedeSocial rede, TUsuarios userA, TUsuarios userB)
 
 void AmizadeIndireta2(TRedeSocial rede, TUsuarios userA, TUsuarios userB, int *id1, int *id2)
 {
-    int i, j;
+    //FUNÇÃO NÃO CONCLUÍDA
+
+    system("cls");
+    printf("\n\n\t>>>>>>    MSG: FUNÇÃO NÃO CONCLUÍDA!!!!    <<<<<<!!!!!");
+    /*int i, j;
 
     for(i=0; i<rede.indice; i++)
     {
@@ -109,4 +113,6 @@ void AmizadeIndireta2(TRedeSocial rede, TUsuarios userA, TUsuarios userB, int *i
 
         }
     }
+    */
+
 }

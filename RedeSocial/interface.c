@@ -437,6 +437,9 @@ void SubMenuModulo3(TRedeSocial *rede, TUsuarios user)
         break;
         case 6:
         {
+
+            //FUNÇÃO NÃO CONCLUÍDA
+
             system("cls");
             printf("\n\n\t>>>>>>    MSG: Digite o nome do primeiro usuários:    <<<<<<\n\n\t>");
             fflush(stdin);
