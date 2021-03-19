@@ -25,6 +25,6 @@ typedef struct
 void FLVazia(TLista *Lista);
 int Vazia(TLista Lista);
 void Inserir(TProduto x, TLista *Lista);
-TCelula Pesquisar(TLista Lista, TProduto Item);
+TCelula* Pesquisar(TLista Lista, TProduto Item);
 void Excluir(TLista *Lista, TProduto *Item);
 void Imprimir(TLista Lista);

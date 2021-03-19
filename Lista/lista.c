@@ -22,24 +22,23 @@ void Inserir(TProduto x, TLista *Lista)
     Lista->tamanho++;
 }
 
-/*TCelula Pesquisar(TLista Lista, TProduto Item)
+TCelula *Pesquisar(TLista Lista, TProduto Item)
 {
-    TCelula *Aux;
-    Aux = Lista.primeiro;
-    while(Aux->prox != NULL)
-    {
-        if(Aux->prox->item.codigo == Item.codigo);
-            return Aux;
-        Aux = Aux->prox;
-    }
-    return NULL;
-}*/
+   TCelula *Aux;
+   Aux = Lista.primeiro;
+   while(Aux->prox != NULL){
+      if(Aux->prox->item.codigo == Item.codigo)
+         return Aux;
+      Aux = Aux->prox;
+   }
+   return NULL;
+}
 
 void Excluir(TLista *Lista, TProduto *Item)
 {
     /* --- obs.: o item a ser retirado é o seguinte ao apontado por p ---*/
     TCelula *Aux1, *Aux2;
-//    Aux1 = Pesquisar(Lista, Item);
+    Aux1 = Pesquisar(*Lista, *Item);
     if(Aux1 != NULL)
     {
         Aux2 = Aux1->prox;
