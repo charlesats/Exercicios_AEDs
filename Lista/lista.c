@@ -34,6 +34,8 @@ TCelula *Pesquisar(TLista Lista, TProduto Item)
    return NULL;
 }
 
+void Alterar(TLista *Lista, TProduto Item)
+
 void Excluir(TLista *Lista, TProduto *Item)
 {
     /* --- obs.: o item a ser retirado é o seguinte ao apontado por p ---*/
