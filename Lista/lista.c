@@ -34,7 +34,12 @@ TCelula *Pesquisar(TLista Lista, TProduto Item)
    return NULL;
 }
 
-void Alterar(TLista *Lista, TProduto Item)
+void Alterar(TLista *Lista, TProduto ItemA, TProduto ItemB)
+{
+    TCelula *Aux;
+    Aux = Pesquisar(*Lista, ItemA);
+    Aux->prox->item = ItemB;
+}
 
 void Excluir(TLista *Lista, TProduto *Item)
 {
@@ -61,5 +66,19 @@ void Imprimir(TLista Lista)
     {
         printf("%d\n", Aux->item.codigo);
         Aux = Aux->prox;
+    }
+}
+
+void Liberar(TLista *Lista)
+{
+    TCelula *Aux1 = Lista->primeiro;
+    TProduto *Item;
+
+    while(Lista->primeiro != NULL)
+    {
+        Lista->primeiro = Lista->primeiro->prox;
+        Item = &Aux1->item;
+        Excluir(Lista, Item);
+        Aux1 = Lista->primeiro;
     }
 }
