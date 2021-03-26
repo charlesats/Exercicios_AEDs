@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1616731236 source:d:\repos\exercicios_aeds\func_strend\main.c
+	<stdio.h>
+	<stdlib.h>
+

@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1616621956 source:d:\repos\exercicios_aeds\func_strcat\main.c
+	<stdio.h>
+	<stdlib.h>
+

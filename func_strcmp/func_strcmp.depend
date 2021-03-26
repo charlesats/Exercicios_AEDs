@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1616686646 source:d:\repos\exercicios_aeds\func_strcmp\main.c
+	<stdio.h>
+	<stdlib.h>
+
