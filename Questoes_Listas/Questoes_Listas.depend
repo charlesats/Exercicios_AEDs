@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1618280799 source:d:\repos\exercicios_aeds\questoes_listas\main.c
+	<stdio.h>
+	<stdlib.h>
+	"lista.h"
+
+1618283890 source:d:\repos\exercicios_aeds\questoes_listas\lista.c
+	"lista.h"
+
+1618278089 d:\repos\exercicios_aeds\questoes_listas\lista.h
+	<stdlib.h>
+	<stdio.h>
+
