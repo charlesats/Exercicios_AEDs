@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1619570183 source:d:\repos\exercicios_aeds\mips-simulator\main.c
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	"simulator.h"
+	"mipsInstructionMap.h"
+
+1619570183 d:\repos\exercicios_aeds\mips-simulator\simulator.h
+
+1619570183 d:\repos\exercicios_aeds\mips-simulator\mipsinstructionmap.h
+

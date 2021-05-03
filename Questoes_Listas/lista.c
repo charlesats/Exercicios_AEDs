@@ -34,22 +34,21 @@ void InserirOrdenado(TProduto Item, TLista *Lista)
 {
     TCelula* Aux1;
     TCelula* Aux2;
-    Aux1 = Lista->primeiro;
-    while(Aux1->prox->item.codigo <= Item.codigo)
-    {
-            Aux1 = Aux1->prox;
-    }
 
+    Aux1 = Lista->primeiro;
     Aux2 = (TCelula *) malloc(sizeof(TCelula));
     Aux2->item = Item;
 
-    Aux2->prox = Aux1->prox;
-    Aux1->prox = Aux2->prox;
+    while(Lista->primeiro->prox->item.codigo <= Item.codigo)
+    {
+            Lista->primeiro->prox = Lista->primeiro->prox->prox;
+    }
 
+    Aux2->prox = Lista->primeiro->prox;
+    Lista->primeiro->prox = Aux2;
+    Lista->primeiro = Aux1;
 
     Lista -> tamanho++;
-
-
 }
 
 TCelula* Pesquisar(TLista Lista, TProduto Item)
@@ -123,4 +122,19 @@ void ConcatenaListas(TLista *Lista1, TLista Lista2)
     Lista1->ultimo->prox = Lista2.primeiro->prox;
 }
 
-
+void ImprimirCelula(TLista Lista, int pos)
+{
+    int i;
+    TCelula *Aux;
+    Aux = Lista.primeiro;
+    if(pos<=Lista.tamanho)
+    {
+        for(i=0; i<pos; i++)
+        {
+            Aux = Aux->prox;
+        }
+        printf("\n\n\nCodigo Item %d: %d\n", i, Aux->item.codigo);
+    }
+    else
+        printf("\nCelula nao existe");
+}

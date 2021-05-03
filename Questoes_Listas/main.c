@@ -13,23 +13,24 @@ int main()
     FLVazia(&Lista1);
     FLVazia(&Lista2);
 
+    /*
     for(i=0;i<5;i++)
     {
         printf("\nInsira um codigo: ");
         scanf("%d", &Item.codigo);
         Inserir(Item, &Lista1);
     }
-    /*for(i=0;i<5;i++)
+    for(i=0;i<5;i++)
     {
         printf("\nInsira um codigo: ");
         scanf("%d", &Item.codigo);
         Inserir(Item, &Lista2);
     }*/
 
-    printf("\n");
+    //printf("\n");
 
-    printf("\nLista 1: \n");
-    Imprimir(Lista1);
+    //printf("\nLista 1: \n");
+    //Imprimir(Lista1);
     //printf("\nLista 2: \n");
     //Imprimir(Lista2);
 
@@ -40,9 +41,19 @@ int main()
     //Excluir(&Lista1, &Lista1.primeiro->prox->item);
     //printf("\nItens Excluidos da Lista 1!!! \n");
 
+    printf("\nInsira um codigo: ");
+    scanf("%d", &Item.codigo);
+    Inserir(Item, &Lista1);
+
+    printf("\nInsira um codigo: ");
+    scanf("%d", &Item.codigo);
+    Inserir(Item, &Lista1);
+
     ConcatenaListas(&Lista1, Lista2);
     printf("\nLista 1: \n");
     Imprimir(Lista1);
+    ImprimirCelula(Lista1, 2);
+
     //printf("\nLista 2: \n");
     //Imprimir(Lista2);
 

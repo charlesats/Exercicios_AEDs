@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1618352589 source:d:\repos\exercicios_aeds\prova_02_questão_02\fila.c
+	"fila.h"
+
+1618351548 d:\repos\exercicios_aeds\prova_02_questão_02\fila.h
+	<stdlib.h>
+	<stdio.h>
+
+1618352668 source:d:\repos\exercicios_aeds\prova_02_questão_02\main.c
+	<stdio.h>
+	<stdlib.h>
+	"fila.h"
+

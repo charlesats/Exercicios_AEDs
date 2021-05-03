@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1619477587 source:d:\repos\exercicios_aeds\prova_03_questao_01\main.c
+	<stdio.h>
+	<stdlib.h>
+	"ordenacao.h"
+
+1619477152 d:\repos\exercicios_aeds\prova_03_questao_01\ordenacao.h
+
+1619479878 source:d:\repos\exercicios_aeds\prova_03_questao_01\ordenacao.c
+	"ordenacao.h"
+

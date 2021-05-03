@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1618368424 source:d:\repos\exercicios_aeds\questoes_pilhas_q1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"pilha.h"
+
+1618368866 d:\repos\exercicios_aeds\questoes_pilhas_q1\pilha.h
+	<stdio.h>
+	<stdlib.h>
+	<sys/time.h>
+
+1618368866 source:d:\repos\exercicios_aeds\questoes_pilhas_q1\pilha.c
+	"pilha.h"
+

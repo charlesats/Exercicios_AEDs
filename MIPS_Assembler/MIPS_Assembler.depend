@@ -1,0 +1,40 @@
+# depslib dependency file v1.0
+1619545840 source:d:\repos\exercicios_aeds\mips_assembler\file_parser.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	<ctype.h>
+	<stdint.h>
+	<unistd.h>
+	"file_parser.h"
+	"tokenizer.h"
+
+1619545840 d:\repos\exercicios_aeds\mips_assembler\file_parser.h
+	"hash_table.h"
+
+1619545840 d:\repos\exercicios_aeds\mips_assembler\hash_table.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<semaphore.h>
+	<stdint.h>
+	"hash_function.h"
+
+1619545840 d:\repos\exercicios_aeds\mips_assembler\hash_function.h
+	<stdio.h>
+	<stddef.h>
+	<stdlib.h>
+
+1619545840 d:\repos\exercicios_aeds\mips_assembler\tokenizer.h
+	<stdlib.h>
+	<stdint.h>
+	<string.h>
+	<errno.h>
+
+1619545840 source:d:\repos\exercicios_aeds\mips_assembler\main.c
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	"file_parser.h"
+	"hash_table.h"
+
