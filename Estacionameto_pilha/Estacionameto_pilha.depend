@@ -1,0 +1,24 @@
+# depslib dependency file v1.0
+1634695046 source:/home/charles/Desktop/Estacionameto_pilha/main.c
+	<stdio.h>
+	<stdlib.h>
+	"pilha.h"
+	"interface.h"
+
+1634695103 source:/home/charles/Desktop/Estacionameto_pilha/pilha.c
+	<stdio.h>
+	<stdlib.h>
+	<sys/time.h>
+	"pilha.h"
+
+1634695046 /home/charles/Desktop/Estacionameto_pilha/pilha.h
+	<stdio.h>
+	<stdlib.h>
+	<sys/time.h>
+
+1634695046 source:/home/charles/Desktop/Estacionameto_pilha/interface.c
+	"interface.h"
+
+1634694211 /home/charles/Desktop/Estacionameto_pilha/interface.h
+	"pilha.h"
+
