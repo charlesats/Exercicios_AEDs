@@ -22,3 +22,26 @@
 1634694211 /home/charles/Desktop/Estacionameto_pilha/interface.h
 	"pilha.h"
 
+1634695046 source:/home/charles/Documents/Exercicios_AEDs/Estacionameto_pilha/interface.c
+	"interface.h"
+
+1634694211 /home/charles/Documents/Exercicios_AEDs/Estacionameto_pilha/interface.h
+	"pilha.h"
+
+1634906354 /home/charles/Documents/Exercicios_AEDs/Estacionameto_pilha/pilha.h
+	<stdio.h>
+	<stdlib.h>
+	<sys/time.h>
+
+1634906484 source:/home/charles/Documents/Exercicios_AEDs/Estacionameto_pilha/main.c
+	<stdio.h>
+	<stdlib.h>
+	"pilha.h"
+	"interface.h"
+
+1634906354 source:/home/charles/Documents/Exercicios_AEDs/Estacionameto_pilha/pilha.c
+	<stdio.h>
+	<stdlib.h>
+	<sys/time.h>
+	"pilha.h"
+

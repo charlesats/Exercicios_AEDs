@@ -6,7 +6,7 @@
 int main()
 {
 
-    int opcao;
+    int opcao, num;
     TPilha est;
     FPVazia(&est);
     TCarro carro;
@@ -16,7 +16,7 @@ int main()
     system("PAUSE");
 
 
-    /*do
+    do
     {
         system("cls");
         MSG_MENU();
@@ -27,24 +27,37 @@ int main()
         {
         case 1:
         {
-            SubMenuModulo1(&rede, user);
+            system("cls");
+            printf("\n\n\t>>>>>>>>>>>>>    Digite o numero do carro:    <<<<<<<<<<<<\n\t>");
+            scanf("%d", &carro.carro);
+            printf("\n\n\t>>>>>>>>>>>>>    Digite o tempo de permanencia em minutos  <<<<<<<<<<<<\n\t>");
+            scanf("%d", &carro.tempo);
 
+            Empilhar(carro, &est);
         }
         break;
         case 2:
         {
-            SubMenuModulo2(&rede, user);
+            system("cls");
+            printf("\n\n\t>>>>>>>>>>>>>    Digite o numero do carro para remover:    <<<<<<<<<<<<\n\t>");
+            scanf("%d", &num);
+            RemoverCarro(&est, num);
 
         }
         break;
         case 3:
         {
-            SubMenuModulo3(&rede, user);
+            system("cls");
+            printf("\n\n\t>>>>>>>>>>>>>    Exibindo veículos:    <<<<<<<<<<<<\n\t>");
+            Imprimir(&est);
         }
+        break;
         case 4:
         {
             system("cls");
-            printf("\n\n\n\t>>>>>>    MSG: Saindo do programa...!!!    <<<<<<\n\n\n");
+            printf("\n\n\n\t>>>>>>    Liberando Estacionameto    <<<<<<\n\n\n");
+            Liberar(&est);
+            Vazia(est);
         }
         break;
         case 5:
@@ -65,52 +78,6 @@ int main()
     while(opcao != 5);
 
     system("PAUSE");
-
-
-    printf("\n>>>> Pilha criada                            <<<<\n");
-    TCarro carro1;
-    TCarro carro2;
-    TCarro carro3;
-    TCarro carro4;
-    TCarro carro5;
-    TCarro carro6;
-
-    printf("\n>>>> Produto criado                          <<<<\n");
-
-    carro1.carro = 1;
-    carro2.carro = 2;
-    carro3.carro = 3;
-    carro4.carro = 4;
-    carro5.carro = 5;
-    carro6.carro = 6;
-
-    printf("\n>>>> Produto atribuido                       <<<<\n");
-
-
-
-    Empilhar(carro1, &est);
-    Empilhar(carro2, &est);
-    Empilhar(carro3, &est);
-    Empilhar(carro4, &est);
-    Empilhar(carro5, &est);
-    Empilhar(carro6, &est);
-
-    printf("\n>>>> O estacionamento contem %d carros!!     <<<<\n", Tamanho(est));
-    Imprimir(&est);
-
-
-    RemoverCarro(&est, 1);
-    printf("\n>>>> O estacionamento contem %d carros!!     <<<<\n", Tamanho(est));
-
-    Imprimir(&est);
-
-    //Liberar(&est);
-
-    //if(Vazia(est))  printf("\nPilha vazia!!");
-    //else printf("\nA pilha contem %d elementos!!", Tamanho(est));
-
-    */
-
 
     return 0;
 }

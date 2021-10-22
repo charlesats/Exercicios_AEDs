@@ -103,8 +103,8 @@ void RemoverCarro(TPilha *Pilha, int excluir)
         Empilhar(Carro, Pilha);
     }
     free(PilhaAux.topo);// eliminar a célula cabeça
-    printf("\n>>>> O carro %d foi removido!!                     <<<<\n", excluir);
-    printf("\n>>>> Foram realizadas %d manobras!!                <<<<\n", cont);
+    printf("\n\n\t>>>> O carro %d foi removido!!                     <<<<\n", excluir);
+    printf("\n\n\t>>>> Foram realizadas %d manobras!!                <<<<\n", cont);
 }
 
 
@@ -126,7 +126,8 @@ int Tamanho(TPilha Pilha)
 void ImprimirCarro(TCarro Carro)
 {
 
-    printf("\n>>>> Carro: %d                                 <\n", Carro.carro);
+    printf("\n\n\t>>>> Carro: %d\t Tempo de permanencia: %d\t Total a pagar R$%.2f   <\n", Carro.carro, Carro.tempo, Carro.tempo*TARIFA);
+
 }
 
 

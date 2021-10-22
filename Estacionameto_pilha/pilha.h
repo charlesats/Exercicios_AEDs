@@ -6,6 +6,7 @@
 #include <sys/time.h>
 
 #define MAXTAM 10  /* define o tamanho máximo da pilha*/
+#define TARIFA 0.01667 /* tarifa a ser paga por minuto 1 real por hora*/
 
 typedef struct
 {
