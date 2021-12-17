@@ -1,15 +1,15 @@
 # depslib dependency file v1.0
-1636686270 source:/home/charles/Documents/Exercicios_AEDs/Guiche/guiche_vendas/main.c
+1636745912 source:/home/charles/Documents/Exercicios_AEDs/Guiche/guiche_vendas/main.c
 	<stdio.h>
 	<stdlib.h>
 	"fila.h"
 	"interface.h"
 
-1636689363 /home/charles/Documents/Exercicios_AEDs/Guiche/guiche_vendas/fila.h
+1636746271 /home/charles/Documents/Exercicios_AEDs/Guiche/guiche_vendas/fila.h
 	<stdlib.h>
 	<stdio.h>
 
-1636689371 source:/home/charles/Documents/Exercicios_AEDs/Guiche/guiche_vendas/fila.c
+1636745405 source:/home/charles/Documents/Exercicios_AEDs/Guiche/guiche_vendas/fila.c
 	"fila.h"
 
 1636685489 source:/home/charles/Documents/Exercicios_AEDs/Guiche/guiche_vendas/interface.c

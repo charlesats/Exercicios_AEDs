@@ -26,7 +26,7 @@ typedef struct fila
     TCelula* frente;
     TCelula* tras;
     int tamanho;
-    int num_passagens;
+    int qtd_passagens;
 } TFila;
 
 void FFVazia(TFila *Fila);
@@ -35,10 +35,7 @@ void Enfileirar(TProduto x, TFila *Fila);
 void Desenfileirar(TFila *Fila, TProduto *Item);
 void LiberarFila(TFila *Fila);
 void Imprimir(TFila *Fila);
-void ImprimirFila(TFila *Fila);
 void ImprimirProduto(TProduto produto);
 void RemoveProduto(TFila *Fila, int pos);
-void IntersecaoFilas(TFila *Fila1, TFila *Fila2, TFila *Fila3);
-void DiferencaConjuntos(TFila *Fila1, TFila *Fila2, TFila *Fila3);
 
 #endif

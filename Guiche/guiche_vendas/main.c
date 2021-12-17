@@ -38,15 +38,14 @@ int main()
             system("cls");
             printf("\n\n\t>>>>>>>>>>>>>    Digite o numero da passagem:    <<<<<<<<<<<<\n\t>");
             scanf("%d", &num);
-            //RemoverCarro(&est, num);
-
+            //Função não concluída!!
         }
         break;
         case 3:
         {
             system("cls");
             printf("\n\n\t>>>>>>>>>>>>>    Exibindo fila de espera    <<<<<<<<<<<<\n\t>");
-            ImprimirFila(&guiche);
+            Imprimir(&guiche);
         }
         break;
         case 4:
